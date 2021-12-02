@@ -6,17 +6,17 @@ pipeline{
         }
     }
     stages{
-        stages('Build'){
+        stage('Build'){
             steps{
                 sh 'mvn -B -DskipTests clean package'
             }
          }
-        stages('Test'){
+        stage('Test'){
             steps{
                 sh 'mvn test'
             }
         }
-        stages('QA'){
+        stage('QA'){
             steps{
                 echo 'QA'
             }
