@@ -10,6 +10,7 @@ pipeline{
             steps{
                 sh 'mvn -B -DskipTests clean package'
             }
+         }
         stages('QA'){
             steps{
                 echo 'QA'
