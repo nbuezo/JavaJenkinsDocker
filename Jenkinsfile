@@ -1,22 +1,22 @@
-pipeline{
-    agent{
+pipeline {
+    agent {
         docker {
             image 'maven:3.8-adoptopenjdk-8'
         }
     }
     stages{
-        stage('Build'){
-            steps{
+        stage('Build') {
+            steps {
                 sh 'mvn -B -DskipTests clean package'
             }
-         }
+        }
         stage('Test'){
-            steps{
+            steps {
                 sh 'mvn test'
             }
         }
-        stage('QA'){
-            steps{
+        stage('QA') {
+            steps {
                 echo 'QA'
             }
         }
